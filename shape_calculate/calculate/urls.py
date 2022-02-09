@@ -6,4 +6,5 @@ from . import views
 
 urlpatterns = [
     path('', views.layout, name='calculate/layout'),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]
+              # + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

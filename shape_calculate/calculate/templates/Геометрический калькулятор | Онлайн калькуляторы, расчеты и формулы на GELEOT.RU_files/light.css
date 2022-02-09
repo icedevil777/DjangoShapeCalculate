@@ -1,0 +1,201 @@
+body {
+  background: #ddd;
+  color: #818181;
+}
+a {color: #939da5;}
+a:hover {color: #939da5;}
+#main {background: #fff; padding: 36px 30px 0;}
+#header {height: 120px; margin: 0; padding: 0;}
+#header a#logo {background: url('images/logo_light.png');}
+#header #block-views-search-block input[type="text"] {background: #E6E9EC!important; color: #555; transition: 0s;}
+#header #block-views-search-block input[type="submit"] {background: url('images/search_button_light.png');}
+.view-search .view-content, .view-search .item-list ul {background: #E5E7EB; box-shadow: none;}
+.view-search table td, .view-search table td.col-2, .view-category table td, .view-category table td.col-2 {border-color: #b0b0b0;}
+.view-search a {color: #5F6A72!important;}
+.view-search .views-field-field-images, .view-category .views-field-field-images {border: 1px solid #999; margin: 3px 3px 13px;  background: #fff;}
+#search_close {background: #888;}
+
+
+.breadcrumb {background: url('images/breadcrumbs_light.png');}
+.breadcrumb a {color: #fff;}
+.breadcrumb .last  {color: #ddd;}
+.breadcrumb .delimiter {color: #bbb;}
+
+#menu ul#menu {background: #F5F6F6; margin: -20px 0 0 -100px;}
+#menu ul#menu li ul.category_sub {
+  top: 136px;
+  box-shadow: 2px 2px 24px #b0b0b0;
+}
+#menu ul#menu li.l_one a.no_text {background: url('images/menu_icons_light.png') no-repeat 0px 3px; border-bottom: 1px dashed #DFE0E0;}
+#menu ul#menu li.l_one.body a.no_text {background: url('images/menu_icons_light.png') no-repeat 0px -37px;}
+#menu ul#menu li.l_one.technology a.no_text {background: url('images/menu_icons_light.png') no-repeat 0px -78px; height: 36px;}
+#menu ul#menu li.l_one.building a.no_text {background: url('images/menu_icons_light.png') no-repeat 0px -116px; height: 36px;}
+#menu ul#menu li.l_one.other a.no_text {background: url('images/menu_icons_light.png') no-repeat 0px -157px; height: 36px;}
+#menu ul#menu li.l_one.converter a.no_text {background: url('images/menu_icons_light.png') no-repeat 0px -197px; height: 36px; border: none;}
+
+.view-term.view-display-id-list_category h1 {color: #303030;}
+.view-term.view-display-id-list_category #icon {background: url('images/category_icons_light.png') no-repeat -12px 0;}
+.view-term.view-display-id-list_category .view-content ul {border-color: #ddd;}
+.view-term.view-display-id-list_category h3 a {color: #828282;}
+.view-term.view-display-id-list_category a.expanded {color: #8E8E8E; text-decoration: none;}
+.view-term.view-display-id-list_category ul a {
+color: #8E8E8E;}
+
+#block-block-5 {background: #F1F3F5; color: #8e8e8e;}
+#block-block-5 h3, #block-block-7 h3, #cabo #properties h2, #cabo form h2, #block-block-5 .content h1 {color: #303030;}
+#tablebody h2 {
+color: #303030;}
+
+#block-block-8 a span {background: url('images/social_icons_light.png') -6px 0; display: block; float: left; margin: 0 3px 0 0; height: 60px; width: 52px;}
+
+
+#block-block-9 .category {background: none; border-bottom: 1px solid #ddd; margin-bottom: 16px; padding: 20px 0 12px;}
+#block-block-9 .category.bottom {border: none; margin-bottom: 16px;}
+#block-block-9 .category.last {margin-bottom: 16px;}
+#block-block-9 .category .title a {
+	border-bottom: 1px solid #24282b;
+	color: #24282b;
+}
+#block-block-9 .category .section_one a {
+	border-bottom: 1px solid #939da5;
+	color: #939da5;
+}
+#block-block-9 .category .icon {background: url('images/category_iconsGrey.png') -8px -4px;}
+
+#block-block-8 {background: url('images/right_social_light.png');}
+#block-block-9 .category .section_two a {color: #818181; text-decoration: none;}
+
+#block-views-references-block h3, #block-views-calc-viewalso h3, #block-views-term-viewalso h3,
+
+.view-category.view-display-id-calcs h1, .view-calc.view-display-id-node h1, .view-category h2 , .view-category h2 a, .view-category h3 {color: #24282b;}
+.view-category.view-display-id-calcs #advert {
+	border-top: 1px dashed #d0d0d0;
+	border-bottom: 1px dashed #d0d0d0;
+}
+
+.view-abuse a {color: #67828b;}
+
+#cabo #properties img, #cabo form .limg   {background:  none; border: 1px solid #ddd;}
+#cabo form {border-top: 1px dashed #bbb;}
+#cabo form #formula {color: #777;}
+
+#cabo #description a, #descriptionc a {color: #5C78A2; text-decoration: none;} /* border-bottom:1px dashed #818181;*/
+#cabo #description a:hover, #descriptionc a:hover {color: #5C78A2;}
+
+#properties a{color: #818181;
+border-bottom:1px dashed #E6E9EC;
+text-decoration: none;}
+
+
+#footer #block-block-3 label, #footer #block-block-4 label, #footer #block-block-37 label, #footer #block-block-47 label {color: #717171;}
+
+.view-term.view-display-id-list_category .icon, .icon#tid_2 {background: url('images/category_iconsGrey.png') -8px -4px;}
+
+.inner_poll {border-color: #d0d0d0;}
+
+
+#cabo form .inright, #cabo form .inright60, #cabo form .inright40, #cabo form .inright25 {
+  background: none;
+}
+#cabo form a {
+color: #818181;
+border-bottom:1px dashed #E6E9EC;
+cursor: pointer;
+}
+#cabo form a:hover {
+color: #818181;
+border-bottom:1px dashed #818181;
+}
+#cabo form #result b a, #cabo form #result b, #cabo form #answer_converter {
+  color: #767676;
+}
+#cabo form #result a:hover {
+border-bottom:1px dashed #E6E9EC;
+}
+#cabo form #nums:nth-child(n+2), #cabo form #nums:nth-child(n+2) a, #cabo form #nums:nth-child(n+2) b, #cabo form #nums10:nth-child(n+2), #cabo form #nums10:nth-child(n+2) a, #cabo form #nums10:nth-child(n+2) b, #cabo form #nums20:nth-child(n+2), #cabo form #nums20:nth-child(n+2) a, #cabo form #nums20:nth-child(n+2) b , #cabo form #nums30:nth-child(n+2), #cabo form #nums30:nth-child(n+2) a, #cabo form #nums30:nth-child(n+2) b, #cabo form #nums40:nth-child(n+2), #cabo form #nums40:nth-child(n+2) a, #cabo form #nums40:nth-child(n+2) b, #cabo form #nums50:nth-child(n+2), #cabo form #nums50:nth-child(n+2) a, #cabo form #nums50:nth-child(n+2) b {
+color: #C3C3C3;
+    }
+#cabo form .nums:nth-child(n+2) a, #cabo form .nums10:nth-child(n+2) a, #cabo form .nums20:nth-child(n+2) a, #cabo form .nums30:nth-child(n+2) a, #cabo form .nums40:nth-child(n+2) a, #cabo form .nums50:nth-child(n+2) a {
+border-bottom:1px dashed #E6E9EC;
+}
+
+#cabo form .str  .num2, #cabo form .str  .num12, #cabo form .str  .num22, #cabo form .str  .num32, #cabo form .str  .num42, #cabo form .str  .num52, #cabo form  #body_converter .num2 , #cabo form  #body_converter .num12, #cabo form .numA    {
+color: #FFFFFF;
+}
+#cabo form .tb  {
+border-top:2px solid #767676; padding-top: 2px;
+}
+#cabo form  #nums:nth-child(n+2) .tb, #cabo form  #nums10:nth-child(n+2) .tb, #cabo form  #nums20:nth-child(n+2) .tb{
+border-top:2px solid #C3C3C3; padding-top: 2px;
+}
+#cabo form #nums .z .tb, #cabo form #nums10 .z .tb, #cabo form #nums20 .z .tb{
+border-top:1px solid #C3C3C3; padding-top: 0px;
+}
+#cabo form .str .tb{
+border-top:1px solid #818181;
+}
+#cabo form .inp {
+  background: none;
+}
+#cabo form .imformula {
+background: none; border: none; border-radius: none;
+}
+form#calc #body_cnv  .str_cnv .inright_cnv{
+  background: #FFFFFF;
+  border: 1px solid #d0d0d0;
+  box-shadow: 0 1px 2px #eee inset;
+}
+form#calc #body_cnv  .str_cnv label  a, #conv_result_type_name, #conv_value_type_name {
+color: #818181;
+border-bottom:1px dashed #E6E9EC;
+}
+form#calc #body_cnv  .str_cnv label  a:hover, #conv_result_type_name:hover, #conv_value_type_name:hover {
+color: #818181;
+border-bottom:1px dashed #818181;
+}
+form#calc #body_cnv  .str_cnv label i {
+color: #cccccc;
+}
+form#calc #body_cnv  .str_cnv label a:hover i {
+color: #818181;
+}
+form#calc #body_cnv  .str_cnv_h {
+	background:#F1F3F5;
+}
+form#calc #body_cnv  .str_cnv_h label {
+color:#A7A7A7;
+}
+#conv_value_type_new,#conv_result_type_new {
+   border:#CCCCCC 1px solid;
+   background-color:#fff;
+}
+
+
+
+
+ @media (max-width: 980px) {
+#menu ul#menu{
+display: none;
+}
+#main {
+    padding: 0px 3px 0px 3px;
+}
+/*#main, #footer {
+    padding: 0px 3px 0px 3px;
+	width: auto;
+}
+#header, .breadcrumb {
+	width: auto;
+}
+#content {
+    width: auto;
+    min-height: 360px;
+}
+#header #block-views-search-block input[type="text"], #header #block-views-search-block {
+width: 120px;
+}
+#header #block-views-search-block input[type="submit"] {
+    margin: -33px 0px 0px 114px !important;
+}
+*/
+}

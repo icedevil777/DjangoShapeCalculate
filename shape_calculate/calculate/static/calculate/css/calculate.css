@@ -1,7 +1,10 @@
-img {
-    margin-left: 15px;
+p {
+    margin-left: 42%;
 }
-
-p{
-    margin-left: 150px;
+p,i{
+   margin-left: 10%;
+ }
+img {
+    margin-left: 40%;
+    height: 150px;
 }
