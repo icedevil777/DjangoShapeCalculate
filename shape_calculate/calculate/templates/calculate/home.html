@@ -1,0 +1,28 @@
+{% extends 'calculate/layout.html' %}
+{% load static %}
+
+{% block content %}
+    <div id = сlassific>
+        <h2 id="left_h2" ><b>Плоские фигуры</b></h2>
+        <h2 id="right_h2"><b>Объемные фигуры</b></h2>
+    </div>
+    <div id = main_div>
+        <div id="left_divs">
+            <div class="left_small"><a href="{% url 'calculate/square' %}"><img class="figures" src="{% static 'calculate/img/img.png' %}" alt="Прямоугольник"></a></div>
+            <div class="right_small"><a href="{% url 'calculate/rectangle' %}"><img class="figures" src="{% static 'calculate/img/img.png' %}" alt="Прямоугольник"></a></div>
+            <div class="left_small"><a href="{% url 'calculate/circle' %}"><img class="figures" src="{% static 'calculate/img/img.png' %}" alt="Прямоугольник"></a></div>
+            <div class="right_small"><a href="{% url 'calculate/triangle' %}"><img class="figures" src="{% static 'calculate/img/img.png' %}" alt="Прямоугольник"></a></div>
+            <div class="left_small"><a href="{% url 'calculate/rombus' %}"><img class="figures" src="{% static 'calculate/img/img.png' %}" alt="Прямоугольник"></a></div>
+            <div class="right_small"><a href="{% url 'calculate/trapezoid' %}"><img class="figures" src="{% static 'calculate/img/img.png' %}" alt="Прямоугольник"></a></div>
+        </div>
+        <div id="right_divs">
+            <div class="left_small"><a href="{% url 'calculate/cube' %}"><img class="figures" src="{% static 'calculate/img/img.png' %}" alt="Прямоугольник"></a></div>
+            <div class="right_small"><a href="{% url 'calculate/parallelepiped' %}"><img class="figures" src="{% static 'calculate/img/img.png' %}" alt="Прямоугольник"></a></div>
+            <div class="left_small"><a href="{% url 'calculate/sphere' %}"><img class="figures" src="{% static 'calculate/img/img.png' %}" alt="Прямоугольник"></a></div>
+            <div class="right_small"><a href="{% url 'calculate/pyramid' %}"><img class="figures" src="{% static 'calculate/img/img.png' %}" alt="Прямоугольник"></a></div>
+            <div class="left_small"><a href="{% url 'calculate/cylinder' %}"><img class="figures" src="{% static 'calculate/img/img.png' %}" alt="Прямоугольник"></a></div>
+            <div class="right_small"><a href="{% url 'calculate/cone' %}"><img class="figures" src="{% static 'calculate/img/img.png' %}" alt="Прямоугольник"></a></div>
+        </div>
+
+    </div>
+{% endblock %}

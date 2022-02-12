@@ -1,0 +1,18 @@
+{% extends 'calculate/layout.html' %}
+{% load static %}
+
+{% block content %}
+    <div>
+        <h1> Квадрат </h1>
+        <img class="shape" src="{% static 'calculate/img/square.png' %}" alt="Квадрат">
+        <p class="square"><i> Введите целое число </i></p>
+        <form method='post'>
+            {% csrf_token %}
+            {{ fom.as_p }}
+            <button class="btn btn-success" type="submit">Вычислить</button>
+        </form><br>
+        <p class="square"> Периметр равен {{perimetr}} </p>
+        <p class="square"> Площадь равна {{area}} </p>
+    </div>
+{% endblock %}
+

@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no,
@@ -9,31 +9,20 @@
     <title>Django Shape Calculate</title>
     <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{% static 'calculate/css/calculate.css' %}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link rel="stylesheet" href="{% static 'calculate/css/calculate.css' %}">
 
 </head>
 <body>
     <img src="{% static 'calculate/img/Logo.png' %}" alt="Логотип">
-    <div id="icon"></div><h1>Геометрический калькулятор</h1>
-    <div id="descriptionc">
-        <p><i>Геометрический калькулятор представляет собой
-    собрание формул и онлайн калькуляторов, которые не только считают все
+    <h1>Геометрический калькулятор</h1>
+        <p id="descriptionc">Геометрический калькулятор фигур представляет собой
+    совокупность формул и онлайн калькуляторов, которые не только считают все
     возможные параметры геометрической фигуры или тела, но и выводят новые
     отношения и взаимосвязи между теми измерениями, которые напрямую между
-    собой не связаны.</i></p>
-        <p><i>В данном разделе можно рассчитать
-    всех геометрических фигур, а также вычислить определенные величины,
-    свойственные конкретному ряду фигур. Здесь вы найдете наиболее полный
-    список возможных вариантов расчета в задачах по геометрии и сможете
-    онлайн получить моментальный результат из любого расклада данных. Все
-    калькуляторы для удобства распределены по разделам с разными фигурами,
-    внутри которых можно найти категории типов расчетных формул.</i></p>
-    </div>
+    собой не связаны. Таким образом, пользователь задает известные параметры фигуры, а на их основе расчитываются неизвестные.</p>
 
-    <div>
-        <p><b>ПЛОСКИЕ ФИГУРЫ</b> <b>ОБЪЕМНЫЕ ФИГУРЫ</b></p>
-    </div>
-
+    {% block content %}
+    {% endblock %}
 </body>
 </html>
