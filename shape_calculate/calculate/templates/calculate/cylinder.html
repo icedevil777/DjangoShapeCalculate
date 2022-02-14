@@ -2,5 +2,24 @@
 {% load static %}
 
 {% block content %}
-    <h1> Cone </h1>
+    <div>
+        <h2 id="titele"> Цилиндр </h2>
+        <img id="calc" src="{% static 'calculate/img/calc2.png' %}" alt="Calc">
+        <img id="mass" src="{% static 'calculate/img/masedge.png' %}" alt="Calc">
+        <img class="shape" src="{% static 'calculate/img/square.png' %}" alt="Квадрат">
+<!--        <p class="square1"> Вводите только положительные целые числа </p>-->
+        <form method='post'>
+            <button id="btn" class="btn btn-dark btn-lg" type="submit">Вычислить</button>
+            <div id="field">
+                {% csrf_token %}
+                {{ fom.as_p }}
+            </div>
+        </form><br>
+        <p class="out_square"> Периметр равен {{perimetr}} </p>
+        <p class="out_square"> Площадь равна {{area}} </p>
+    </div>
+
+    <div>
+         <a href="{% url 'calculate/home' %}" ><button id="btn_back" class="btn btn-dark btn-lg" type="submit">Выбрать другую фигуру</button></a>
+    </div>
 {% endblock %}

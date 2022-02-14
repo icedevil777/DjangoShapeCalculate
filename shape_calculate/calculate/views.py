@@ -2,6 +2,10 @@ from django.shortcuts import render
 from .forms import *
 from .classes import *
 
+import matplotlib
+import matplotlib.pyplot as plt
+from matplotlib import patches
+
 
 def home(request):
     return render(request, 'calculate/home.html')
@@ -12,20 +16,22 @@ def square(request):
     fom = AddPostForm()
     perimetr = 0
     area = 0
+    Square(0).square_draw()
     if request.method == 'POST':
         fom = AddPostForm(request.POST)
         if fom.is_valid():
             try:
                 X = fom.cleaned_data['side']
+                Square(int(X)).square_draw()
                 area = Square(int(X)).area()
                 perimetr = Square(int(X)).perimetr()
             except ValueError:
                 fom = AddPostForm()
                 area = "Error"
                 perimetr = "Error"
+
     data = {'fom': fom, 'perimetr': perimetr, 'area': area}
     return render(request, 'calculate/square.html', data)
-
 
 
 def rectangle(request):

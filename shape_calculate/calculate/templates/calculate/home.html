@@ -3,25 +3,25 @@
 
 {% block content %}
     <div id = сlassific>
-        <h2 id="left_h2" ><b>Плоские фигуры</b></h2>
-        <h2 id="right_h2"><b>Объемные фигуры</b></h2>
+        <h3 id="left_h3" ><b>Плоские фигуры</b></h3>
+        <h3 id="right_h3"><b>Объемные фигуры</b></h3>
     </div>
     <div id = main_div>
         <div id="left_divs">
-            <div class="left_small"><a href="{% url 'calculate/square' %}"><img class="figures" src="{% static 'calculate/img/img.png' %}" alt="Прямоугольник"></a></div>
-            <div class="right_small"><a href="{% url 'calculate/rectangle' %}"><img class="figures" src="{% static 'calculate/img/img.png' %}" alt="Прямоугольник"></a></div>
-            <div class="left_small"><a href="{% url 'calculate/circle' %}"><img class="figures" src="{% static 'calculate/img/img.png' %}" alt="Прямоугольник"></a></div>
-            <div class="right_small"><a href="{% url 'calculate/triangle' %}"><img class="figures" src="{% static 'calculate/img/img.png' %}" alt="Прямоугольник"></a></div>
-            <div class="left_small"><a href="{% url 'calculate/rombus' %}"><img class="figures" src="{% static 'calculate/img/img.png' %}" alt="Прямоугольник"></a></div>
-            <div class="right_small"><a href="{% url 'calculate/trapezoid' %}"><img class="figures" src="{% static 'calculate/img/img.png' %}" alt="Прямоугольник"></a></div>
+            <div class="left_small"><h4><b>Квадрат</b></h4><a href="{% url 'calculate/square' %}"><img class="figures" src="{% static 'calculate/img/home/square.png' %}"></a></div>
+            <div class="right_small"><h4><b>Прямоугольник</b></h4><a href="{% url 'calculate/rectangle' %}"><img class="figures" src="{% static 'calculate/img/home/rectangle.png' %}" ></a></div>
+            <div class="left_small"><h4><b>Треугольник</b></h4><a href="{% url 'calculate/triangle' %}"><img class="figures" src="{% static 'calculate/img/home/triangle.png' %}"></a></div>
+            <div class="right_small"><h4><b>Ромб</b></h4><a href="{% url 'calculate/rombus' %}"><img class="figures" src="{% static 'calculate/img/home/rombus.png' %}"></a></div>
+            <div class="left_small"><h4><b>Трапеция</b></h4><a href="{% url 'calculate/trapezoid' %}"><img class="figures" src="{% static 'calculate/img/home/trapezoid.png' %}"></a></div>
+            <div class="right_small"><h4><b>Круг</b></h4><a href="{% url 'calculate/circle' %}"><img class="figures" src="{% static 'calculate/img/home/circle.png' %}"></a></div>
         </div>
         <div id="right_divs">
-            <div class="left_small"><a href="{% url 'calculate/cube' %}"><img class="figures" src="{% static 'calculate/img/img.png' %}" alt="Прямоугольник"></a></div>
-            <div class="right_small"><a href="{% url 'calculate/parallelepiped' %}"><img class="figures" src="{% static 'calculate/img/img.png' %}" alt="Прямоугольник"></a></div>
-            <div class="left_small"><a href="{% url 'calculate/sphere' %}"><img class="figures" src="{% static 'calculate/img/img.png' %}" alt="Прямоугольник"></a></div>
-            <div class="right_small"><a href="{% url 'calculate/pyramid' %}"><img class="figures" src="{% static 'calculate/img/img.png' %}" alt="Прямоугольник"></a></div>
-            <div class="left_small"><a href="{% url 'calculate/cylinder' %}"><img class="figures" src="{% static 'calculate/img/img.png' %}" alt="Прямоугольник"></a></div>
-            <div class="right_small"><a href="{% url 'calculate/cone' %}"><img class="figures" src="{% static 'calculate/img/img.png' %}" alt="Прямоугольник"></a></div>
+            <div class="left_small"><h4><b>Куб</b></h4><a href="{% url 'calculate/cube' %}"><img class="figures" src="{% static 'calculate/img/home/cube.png' %}"></a></div>
+            <div class="right_small"><h4><b>Параллелепипед</b></h4><a href="{% url 'calculate/parallelepiped' %}"><img class="figures" src="{% static 'calculate/img/home/parallelepiped.png' %}"></a></div>
+            <div class="left_small"><h4><b>Сфера</b></h4><a href="{% url 'calculate/sphere' %}"><img class="figures" src="{% static 'calculate/img/home/sphere.png' %}"></a></div>
+            <div class="right_small"><h4><b>Тетраэдр</b></h4><a href="{% url 'calculate/pyramid' %}"><img class="figures" src="{% static 'calculate/img/home/pyramid.png' %}"></a></div>
+            <div class="left_small"><h4><b>Цилиндр</b></h4><a href="{% url 'calculate/cylinder' %}"><img class="figures" src="{% static 'calculate/img/home/cylinder.png' %}"></a></div>
+            <div class="right_small"><h4><b>Конус</b></h4><a href="{% url 'calculate/cone' %}"><img class="figures" src="{% static 'calculate/img/home/cone.png' %}"></a></div>
         </div>
 
     </div>

@@ -1,4 +1,9 @@
 import math
+import matplotlib
+import matplotlib.pyplot as plt
+from matplotlib import patches
+
+matplotlib.use('TkAgg')
 
 
 class PlaneShapes:
@@ -53,7 +58,14 @@ class Square(PlaneShapes):
         return self.x * 4
 
     def square_draw(self):
-        pass
+
+        fig, ax = plt.subplots(figsize=(8, 8))
+        ax.add_patch(patches.Rectangle((0, 0), self.x, self.x, edgecolor='black', facecolor='black', fill=True))
+        plt.xlim([-(self.x * 0.3), self.x + self.x * 0.3])
+        plt.ylim([-(self.x * 0.3), self.x + self.x * 0.3])
+        plt.grid(linestyle='--')
+        fig.savefig('static/calculate/img/square.png')
+
 
 class Rectangle(PlaneShapes):
     """Class describes rectangle"""
@@ -69,6 +81,15 @@ class Rectangle(PlaneShapes):
 
     def perimetr(self):
         return (2 * self.x) + (2 * self.y)
+
+    def square_draw(self):
+
+        fig, ax = plt.subplots(figsize=(8, 8))
+        ax.add_patch(patches.Rectangle((0, 0), self.x, self.y, edgecolor='black', facecolor='black', fill=True))
+        plt.xlim([-(self.x * 0.3), self.x + self.x * 0.3])
+        plt.ylim([-(self.y * 0.3), self.y + self.y * 0.3])
+        plt.grid(linestyle='--')
+        fig.savefig('static/calculate/img/rectangle.png')
 
 
 class Circle(PlaneShapes):

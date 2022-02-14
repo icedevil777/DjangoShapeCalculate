@@ -3,16 +3,24 @@
 
 {% block content %}
     <div>
-        <h1> Квадрат </h1>
+        <h2 id="titele"> Квадрат </h2>
+        <img id="calc" src="{% static 'calculate/img/calc2.png' %}" alt="Calc">
+        <img id="mass" src="{% static 'calculate/img/masedge.png' %}" alt="Calc">
         <img class="shape" src="{% static 'calculate/img/square.png' %}" alt="Квадрат">
-        <p class="square"><i> Введите целое число </i></p>
+<!--        <p class="square1"> Вводите только положительные целые числа </p>-->
         <form method='post'>
-            {% csrf_token %}
-            {{ fom.as_p }}
-            <button class="btn btn-success" type="submit">Вычислить</button>
+            <button id="btn" class="btn btn-dark btn-lg" type="submit">Вычислить</button>
+            <div id="field">
+                {% csrf_token %}
+                {{ fom.as_p }}
+            </div>
         </form><br>
-        <p class="square"> Периметр равен {{perimetr}} </p>
-        <p class="square"> Площадь равна {{area}} </p>
+        <p class="out_square"> Периметр равен {{perimetr}} </p>
+        <p class="out_square"> Площадь равна {{area}} </p>
+    </div>
+
+    <div>
+         <a href="{% url 'calculate/home' %}" ><button id="btn_back" class="btn btn-dark btn-lg" type="submit">Выбрать другую фигуру</button></a>
     </div>
 {% endblock %}
 
