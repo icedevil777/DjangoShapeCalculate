@@ -6,8 +6,7 @@
         <h2 id="titele"> Треугольник </h2>
         <img id="calc" src="{% static 'calculate/img/calc2.png' %}" alt="Calc">
         <img id="mass" src="{% static 'calculate/img/masedge.png' %}" alt="Calc">
-        <img class="shape" src="{% static 'calculate/img/square.png' %}" alt="Квадрат">
-<!--        <p class="square1"> Вводите только положительные целые числа </p>-->
+        <img class="shape" src="{% static 'calculate/img/triangle.png' %}" alt="Треугольник">
         <form method='post'>
             <button id="btn" class="btn btn-dark btn-lg" type="submit">Вычислить</button>
             <div id="field">
@@ -17,6 +16,7 @@
         </form><br>
         <p class="out_square"> Периметр равен {{perimetr}} </p>
         <p class="out_square"> Площадь равна {{area}} </p>
+        <p class="out_square"> Медиана равна {{median}} </p>
     </div>
 
     <div>

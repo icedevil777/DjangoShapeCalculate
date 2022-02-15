@@ -1,4 +1,4 @@
-import math
+import math as m
 import matplotlib
 import matplotlib.pyplot as plt
 from matplotlib import patches
@@ -6,59 +6,40 @@ from matplotlib import patches
 matplotlib.use('TkAgg')
 
 
-class PlaneShapes:
-    """Main parent class for plane figures"""
-    titele = "Plane figures"
+class Figures:
+    """Main parent class"""
+    titele = "Figures"
 
-    def __init__(self):
-        pass
+    def __init__(self, x=None, y=None, z=None):
+        """The sides of the figures are passed to the class constructor"""
+        self.x = x
+        self.y = y
+        self.z = z
 
-    def area(self):
+    def get_area(self) -> int:
         """Area calculation method"""
         pass
 
-    def perimetr(self):
+    def get_perimetr(self) -> int:
         """Perimetr calculation method"""
         pass
 
-    def diagonal(self):
-        """Diagonal calculation method"""
-        pass
-
-
-class VolumetricShapes:
-    """Main parent class for volumetric figures"""
-    titele = "Volumetric figures"
-
-    def __init__(self):
-        pass
-
-    def volume(self):
+    def get_volume(self) -> int:
         """Volume calculation method"""
-
-        pass
-
-    def height(self):
-        """Height calculation method"""
         pass
 
 
-class Square(PlaneShapes):
+class Square(Figures):
     """Class describes square"""
     titele = "Square"
 
-    def __init__(self, x):
-        super().__init__()
-        self.x = x
-
-    def area(self):
+    def get_area(self) -> int:
         return self.x ** 2
 
-    def perimetr(self):
+    def get_perimetr(self) -> int:
         return self.x * 4
 
-    def square_draw(self):
-
+    def draw(self):
         fig, ax = plt.subplots(figsize=(8, 8))
         ax.add_patch(patches.Rectangle((0, 0), self.x, self.x, edgecolor='black', facecolor='black', fill=True))
         plt.xlim([-(self.x * 0.3), self.x + self.x * 0.3])
@@ -67,205 +48,206 @@ class Square(PlaneShapes):
         fig.savefig('static/calculate/img/square.png')
 
 
-class Rectangle(PlaneShapes):
+class Rectangle(Figures):
     """Class describes rectangle"""
     titele = "Rectangle"
 
-    def __init__(self, x, y):
-        super(PlaneShapes, self).__init__()
-        self.x = x
-        self.y = y
-
-    def area(self):
+    def get_area(self) -> int:
         return self.x * self.y
 
-    def perimetr(self):
+    def get_perimetr(self) -> int:
         return (2 * self.x) + (2 * self.y)
 
-    def square_draw(self):
-
+    def draw(self):
         fig, ax = plt.subplots(figsize=(8, 8))
         ax.add_patch(patches.Rectangle((0, 0), self.x, self.y, edgecolor='black', facecolor='black', fill=True))
-        plt.xlim([-(self.x * 0.3), self.x + self.x * 0.3])
-        plt.ylim([-(self.y * 0.3), self.y + self.y * 0.3])
+        if self.x > self.y:
+            plt.xlim([-(self.x * 0.3), self.x + self.x * 0.3])
+            plt.ylim([-(self.x * 0.3), self.x + self.x * 0.3])
+        else:
+            plt.xlim([-(self.y * 0.3), self.y + self.y * 0.3])
+            plt.ylim([-(self.y * 0.3), self.y + self.y * 0.3])
         plt.grid(linestyle='--')
         fig.savefig('static/calculate/img/rectangle.png')
 
 
-class Circle(PlaneShapes):
-    """Class describes circle"""
+class Circle(Figures):
+    """
+    Class describes circle, where x - radius
+    """
     titele = "Circle"
 
-    def __init__(self, r):
-        super().__init__()
-        self.r = r
+    def get_area(self) -> float:
+        return (self.x ** 2) * m.pi
 
-    def area(self):
-        return (self.r ** 2) * math.pi
+    def get_circumference(self) -> float:
+        return self.x * 2 * m.pi
 
-    def circumference(self):
-        return self.r * 2 * math.pi
-
-    def diametr(self):
-        return self.r * 2
+    def get_diametr(self) -> float:
+        return self.x * 2
 
 
-class Triangle(PlaneShapes):
-    """Class describes triangle"""
+class Triangle(Figures):
+    """Class describes equilateral triangle"""
 
-    titele = "Equilateral_triangle"
+    titele = "EquilateralTriangle"
 
-    def __init__(self, x):
-        super().__init__()
-        self.x = x
-        self.h = math.sqrt(self.x ** 2 - (self.x ** 2) / 4)
+    def get_median(self) -> float:
+        return round((m.sqrt(3) * self.x / 2), 3)
 
-    def height(self):
-        return self.h
+    def get_perimetr(self) -> int:
+        return 3 * self.x
 
-    def area(self):
-        return (self.x * self.h) / 2
+    def get_area(self) -> float:
+        return round((m.sqrt(3) * self.x ** 2 / 4), 3)
 
-    def median(self):
-        return (math.sqrt(3) * self.x) / 2
+    def draw(self):
+        fig, ax = plt.subplots(figsize=(8, 8))
+        # ax.set_aspect('equal')
+        x = [0, self.x, self.x / 2, 0]
+        y = [0, 0, self.x * 0.866, 0]
+        plt.plot(x, y)
+        plt.xlim([-(self.x * 0.3), self.x + self.x * 0.3])
+        plt.ylim([-(self.x * 0.3), self.x + self.x * 0.3])
+        plt.grid(linestyle='--')
+        fig.savefig('static/calculate/img/triangle.png')
 
 
-class Rombus(PlaneShapes):
-    """Class describes rombus"""
+class Rombus(Figures):
+    """
+    Class describes rombus
+    x - size; y - height
+    """
     titele = "Rombus"
 
-    def __init__(self, a, b, c, d):
-        super().__init__()
-        self.a = a
-        self.b = b
-        self.c = c
-        self.d = d
+    def get_area(self) -> int:
+        return self.x * self.y
 
-        self.diag1 = math.sqrt(a ** 2 + b ** 2)
-        self.diag2 = math.sqrt(c ** 2 + d ** 2)
+    def get_perimetr(self) -> int:
+        return 4 * self.x
 
-    def area(self):
-        return (self.diag1 * self.diag2) / 2
+    def draw(self):
+        fig, ax = plt.subplots(figsize=(8, 8))
+        x = [0, self.x, self.x + m.sqrt(self.x ** 2 - self.y ** 2),
+             m.sqrt(self.x ** 2 - self.y ** 2), 0]
+        y = [0, 0, self.y, self.y, 0]
+        plt.plot(x, y)
+        plt.xlim([-(self.x * 0.1), self.x + m.sqrt(self.x ** 2 - self.y ** 2) +
+                  (self.x + m.sqrt(self.x ** 2 - self.y ** 2)) * 0.1])
 
-    def perimetr(self):
-        return self.a + self.b + self.c + self.d
+        plt.ylim([-(self.x * 0.1), self.x + m.sqrt(self.x ** 2 - self.y ** 2) +
+                  (self.x + m.sqrt(self.x ** 2 - self.y ** 2)) * 0.1])
+        plt.grid(linestyle='--')
+        fig.savefig('static/calculate/img/rombus.png')
 
-    def diags(self):
-        return self.diag1, self.diag2
 
-
-class Trapezoid(PlaneShapes):
-    """Class describes trapezoid"""
+class Trapezoid(Rombus):
+    """
+    Class describes trapezoid
+    x,y,z - top, bot and height respectively
+    """
     titele = "Trapezoid"
 
-    def __init__(self, a, b, c):  #
-        super().__init__()
-        self.a = a  # Нижнее основание
-        self.b = b  # Верхнее основание
-        self.c = c  # Стороны
-        try:
-            self.h = math.sqrt(self.c ** 2 - ((self.a - self.b) ** 2) / 4)
-        except ZeroDivisionError:
-            "Err"
+    def get_area(self) -> float:
+        return self.z * (self.x + self.y) / 2
 
-    def area(self):
-        return ((self.a + self.b) * self.h) / 2
+    def get_diagonal(self) -> float:
+        return round(m.sqrt(self.z**2 + (self.y - (self.y - self.x)/2)**2), 2)
+
+    def draw(self):
+        fig, ax = plt.subplots(figsize=(8, 8))
+        x = [0, self.y, self.y - (self.y - self.x) / 2, (self.y - self.x) / 2, 0]
+        y = [0, 0, self.z, self.z, 0]
+        plt.plot(x, y)
+        if self.z > self.y and self.z > self.x:
+            plt.xlim([-(self.z * 0.1), self.z + self.z * 0.1])
+            plt.ylim([-(self.z * 0.1), self.z + self.z * 0.1])
+        elif self.y > self.z and self.y > self.x:
+            plt.xlim([-(self.y * 0.1), self.y + self.y * 0.1])
+            plt.ylim([-(self.y * 0.1), self.y + self.y * 0.1])
+        else:
+            plt.xlim([-(self.x + self.x * 0.1), self.x + self.x * 0.1])
+            plt.ylim([-(self.x + self.x * 0.1), self.x + self.x * 0.1])
+        plt.grid(linestyle='--')
+        fig.savefig('static/calculate/img/trapezoid.png')
 
 
-class Сube(VolumetricShapes):
+class Сube(Figures):
     """Class describes cube"""
     titele = "Сube"
 
-    def __init__(self, x):
-        super().__init__()
-        self.x = x
-
-    def volume(self):
+    def get_volume(self):
         return self.x ** 3
 
-    def area(self):
+    def get_area(self):
         return self.x ** 2 * 6
 
 
-class Parallelepiped(VolumetricShapes):
+class Parallelepiped(Figures):
     """Class describes parallelepiped"""
     titele = "Parallelepiped"
 
-    def __init__(self, a, b, c):
-        super().__init__()
-        self.a = a
-        self.b = b
-        self.c = c
+    def get_volume(self):
+        return self.x * self.y * self.z
 
-    def volume(self):
-        return self.a * self.b * self.c
-
-    def area(self):
-        return (self.a * self.b + self.a * self.c + self.c * self.b) * 2
+    def get_area(self):
+        return (self.x * self.y + self.x * self.z + self.z * self.y) * 2
 
 
-class Sphere(VolumetricShapes):
+class Sphere(Figures):
     """Class describes sphere"""
     titele = "Sphere"
 
-    def __init__(self, r):
-        super(VolumetricShapes, self).__init__()
-        self.r = r
+    def get_volume(self):
+        return 4 * m.pi * self.x ** 3 / 3
 
-    def volume(self):
-        return 4 * math.pi * self.r ** 3 / 3
-
-    def area(self):
-        return 4 * self.r * math.pi
+    def get_area(self):
+        return 4 * self.x * m.pi
 
 
-class Pyramid(VolumetricShapes):
+class Pyramid(Figures):
     """Class describes pyramid"""
     titele = "Pyramid_Tetrahedron"
 
-    def __init__(self, x):
-        super(VolumetricShapes, self).__init__()
-        self.x = x
+    def get_height(self):
+        return m.sqrt(2 * self.x / 3)
 
-    def height(self):
-        return math.sqrt(2 * self.x / 3)
+    def get_volume(self):
+        return m.sqrt(2) * self.x ** 3 / 12
 
-    def volume(self):
-        return math.sqrt(2) * self.x ** 3 / 12
-
-    def area(self):
-        return math.sqrt(3) * self.x ** 2
+    def get_area(self):
+        return m.sqrt(3) * self.x ** 2
 
 
-class Сylinder(VolumetricShapes):
-    """Class describes сylinder"""
+class Сylinder(Figures):
+    """
+    Class describes сylinder
+    x - radius, y - height
+    """
     titele = "Сylinder"
 
-    def __init__(self, r, h):
-        super().__init__()
-        self.r = r
-        self.h = h
+    def get_volume(self):
+        return self.x * m.pi * self.y ** 2
 
-    def volume(self):
-        return self.h * math.pi * self.r ** 2
-
-    def area(self):
-        return 2 * math.pi * self.r * self.h + 2 * math.pi * self.r ** 2
+    def get_area(self):
+        return 2 * m.pi * self.x * self.y + 2 * m.pi * self.x ** 2
 
 
-class Сone(VolumetricShapes):
-    """Class describes Сone"""
+class Сone(Figures):
+    """
+    Class describes Сone
+    x - radius, y - height
+    """
     titele = "Сone"
 
-    def __init__(self, l, r):
-        super().__init__()
-        self.r = r  # Радиус
-        self.l = l  # Образующая
-        self.h = math.sqrt(l ** 2 - r ** 2)
-        self.s = math.pi * self.r * (self.r + self.l)
+    def __init__(self, x, y):
+        super(Figures, self).__init__()
+        self.x = x
+        self.y = y
+        self.s = m.pi * self.x ** 2
 
-    def volume(self):
-        return (self.s * self.h) / 3
+    def get_volume(self):
+        return (self.s * self.y) / 3
 
-    def area(self):
+    def get_area(self):
         return self.s

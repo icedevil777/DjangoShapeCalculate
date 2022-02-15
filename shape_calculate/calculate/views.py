@@ -12,30 +12,49 @@ def home(request):
 
 
 def square(request):
-    X = 0
-    fom = AddPostForm()
+    x = 0
+    fom = OneForm()
     perimetr = 0
     area = 0
-    Square(0).square_draw()
+    Square(x).draw()
     if request.method == 'POST':
-        fom = AddPostForm(request.POST)
+        fom = OneForm(request.POST)
         if fom.is_valid():
             try:
-                X = fom.cleaned_data['side']
-                Square(int(X)).square_draw()
-                area = Square(int(X)).area()
-                perimetr = Square(int(X)).perimetr()
+                x = fom.cleaned_data['side_x']
+                Square(x).draw()
+                area = Square(x).get_area()
+                perimetr = Square(x).get_perimetr()
             except ValueError:
-                fom = AddPostForm()
+                fom = OneForm()
                 area = "Error"
                 perimetr = "Error"
-
     data = {'fom': fom, 'perimetr': perimetr, 'area': area}
     return render(request, 'calculate/square.html', data)
 
 
 def rectangle(request):
-    return render(request, 'calculate/rectangle.html')
+    x = 0
+    y = 0
+    fom = TwoForms()
+    perimetr = 0
+    area = 0
+    Rectangle(x, y).draw()
+    if request.method == 'POST':
+        fom = TwoForms(request.POST)
+        if fom.is_valid():
+            try:
+                x = fom.cleaned_data['side_x']
+                y = fom.cleaned_data['side_y']
+                Rectangle(x, y).draw()
+                area = Rectangle(x, y).get_area()
+                perimetr = Rectangle(x, y).get_perimetr()
+            except ValueError:
+                fom = TwoForms()
+                area = "Error"
+                perimetr = "Error"
+    data = {'fom': fom, 'perimetr': perimetr, 'area': area}
+    return render(request, 'calculate/rectangle.html', data)
 
 
 def circle(request):
@@ -43,15 +62,78 @@ def circle(request):
 
 
 def triangle(request):
-    return render(request, 'calculate/triangle.html')
+    x = 0
+    fom = OneForm()
+    perimetr = 0
+    area = 0
+    median = 0
+    Triangle(x).draw()
+    if request.method == 'POST':
+        fom = OneForm(request.POST)
+        if fom.is_valid():
+            try:
+                x = fom.cleaned_data['side_x']
+                Triangle(x).draw()
+                area = Triangle(x).get_area()
+                perimetr = Triangle(x).get_perimetr()
+                median = Triangle(x).get_median()
+            except ValueError:
+                fom = OneForm()
+                area = "Error"
+                perimetr = "Error"
+                median = "Error"
+    data = {'fom': fom, 'perimetr': perimetr, 'area': area, 'median': median}
+    return render(request, 'calculate/triangle.html', data)
 
 
 def rombus(request):
-    return render(request, 'calculate/rombus.html')
+    x = 0
+    y = 0
+    fom = TwoForms()
+    perimetr = 0
+    area = 0
+    Rombus(x, y).draw()
+    if request.method == 'POST':
+        fom = TwoForms(request.POST)
+        if fom.is_valid():
+            try:
+                x = fom.cleaned_data['side_x']
+                y = fom.cleaned_data['side_y']
+                Rombus(x, y).draw()
+                area = Rombus(x, y).get_area()
+                perimetr = Rombus(x, y).get_perimetr()
+            except ValueError:
+                fom = TwoForms()
+                area = "Error"
+                perimetr = "Error"
+    data = {'fom': fom, 'perimetr': perimetr, 'area': area}
+    return render(request, 'calculate/rombus.html', data)
 
 
 def trapezoid(request):
-    return render(request, 'calculate/trapezoid.html')
+    x = 0
+    y = 0
+    z = 0
+    fom = ThreeForms()
+    area = 0
+    diagonal = 0
+    Trapezoid(x, y, z).draw()
+    if request.method == 'POST':
+        fom = ThreeForms(request.POST)
+        if fom.is_valid():
+            try:
+                x = fom.cleaned_data['side_x']
+                y = fom.cleaned_data['side_y']
+                z = fom.cleaned_data['side_z']
+                Trapezoid(x, y, z).draw()
+                area = Trapezoid(x, y, z).get_area()
+                diagonal = Trapezoid(x, y, z).get_diagonal()
+            except ValueError:
+                fom = ThreeForms()
+                area = "Error"
+                diagonal = "Error"
+    data = {'fom': fom, 'diagonal': diagonal, 'area': area}
+    return render(request, 'calculate/trapezoid.html', data)
 
 
 def cube(request):
