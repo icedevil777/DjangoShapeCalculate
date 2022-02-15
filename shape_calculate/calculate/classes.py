@@ -30,7 +30,10 @@ class Figures:
 
 
 class Square(Figures):
-    """Class describes square"""
+    """
+    Class describes square
+    x - side;
+    """
     titele = "Square"
 
     def get_area(self) -> int:
@@ -49,7 +52,10 @@ class Square(Figures):
 
 
 class Rectangle(Figures):
-    """Class describes rectangle"""
+    """
+    Class describes rectangle
+    x and y - sides;
+    """
     titele = "Rectangle"
 
     def get_area(self) -> int:
@@ -74,6 +80,7 @@ class Rectangle(Figures):
 class Circle(Figures):
     """
     Class describes circle, where x - radius
+    x - radius;
     """
     titele = "Circle"
 
@@ -86,9 +93,19 @@ class Circle(Figures):
     def get_diametr(self) -> float:
         return self.x * 2
 
+    def draw(self):
+        fig, ax = plt.subplots(figsize=(8, 8))
+        ax.add_patch(patches.Rectangle((0, 0), self.x, self.x, edgecolor='black', facecolor='black', fill=True))
+        plt.xlim([-(self.x * 0.3), self.x + self.x * 0.3])
+        plt.ylim([-(self.x * 0.3), self.x + self.x * 0.3])
+        plt.grid(linestyle='--')
+        fig.savefig('static/calculate/img/square.png')
 
 class Triangle(Figures):
-    """Class describes equilateral triangle"""
+    """
+    Class describes equilateral triangle
+    x - side;
+    """
 
     titele = "EquilateralTriangle"
 
@@ -116,7 +133,7 @@ class Triangle(Figures):
 class Rombus(Figures):
     """
     Class describes rombus
-    x - size; y - height
+    x - side; y - height;
     """
     titele = "Rombus"
 
@@ -144,7 +161,7 @@ class Rombus(Figures):
 class Trapezoid(Rombus):
     """
     Class describes trapezoid
-    x,y,z - top, bot and height respectively
+    x,y,z - top, bot and height respectively;
     """
     titele = "Trapezoid"
 
@@ -173,7 +190,10 @@ class Trapezoid(Rombus):
 
 
 class Сube(Figures):
-    """Class describes cube"""
+    """
+    Class describes cube
+    x - side;
+    """
     titele = "Сube"
 
     def get_volume(self):
@@ -184,7 +204,10 @@ class Сube(Figures):
 
 
 class Parallelepiped(Figures):
-    """Class describes parallelepiped"""
+    """
+    Class describes parallelepiped
+    x, y , z - sides;
+    """
     titele = "Parallelepiped"
 
     def get_volume(self):
@@ -195,7 +218,10 @@ class Parallelepiped(Figures):
 
 
 class Sphere(Figures):
-    """Class describes sphere"""
+    """
+    Class describes sphere
+    x - radius;
+    """
     titele = "Sphere"
 
     def get_volume(self):
@@ -206,7 +232,10 @@ class Sphere(Figures):
 
 
 class Pyramid(Figures):
-    """Class describes pyramid"""
+    """
+    Class describes pyramid
+    x - side y - height;
+    """
     titele = "Pyramid_Tetrahedron"
 
     def get_height(self):
