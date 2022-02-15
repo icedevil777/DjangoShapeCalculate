@@ -102,9 +102,24 @@ h4{
     margin-bottom: 1%;
 }
 
-form{
+#form_1{
     width: 300px;
+    margin-left:22%;
+    float: left;
+    z-index:1;
+    position: relative;
+}
 
+#form_2{
+    width: 300px;
+    margin-left:22%;
+    float: left;
+    z-index:1;
+    position: relative;
+}
+
+#form_3{
+    width: 300px;
     margin-left:22%;
     float: left;
     z-index:1;
@@ -136,11 +151,28 @@ form{
     margin-left:60%;
 }
 
-#calc{
+#calc_1{
     float: left;
     margin-left:15%;
     height: 550px;
     margin-top:5%;
+    position: absolute;
+    z-index:0;
+}
+#calc_2{
+    float: left;
+    margin-left:13%;
+    height: 550px;
+    margin-top:6%;
+    position: absolute;
+    z-index:0;
+}
+
+#calc_3{
+    float: left;
+    margin-left:15%;
+    height: 550px;
+    margin-top:6%;
     position: absolute;
     z-index:0;
 }
