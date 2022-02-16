@@ -58,7 +58,28 @@ def rectangle(request):
 
 
 def circle(request):
-    return render(request, 'calculate/circle.html')
+    x = 0
+    fom = OneForm()
+    diametr = 0
+    area = 0
+    circumference = 0
+    Circle(x).draw()
+    if request.method == 'POST':
+        fom = OneForm(request.POST)
+        if fom.is_valid():
+            try:
+                x = fom.cleaned_data['side_x']
+                Circle(x).draw()
+                area = Circle(x).get_area()
+                diametr = Circle(x).get_diametr()
+                circumference = Circle(x).get_circumference()
+            except ValueError:
+                fom = OneForm()
+                area = "Error"
+                diametr = "Error"
+                circumference = "Error"
+    data = {'fom': fom, 'diametr': diametr, 'area': area, 'circumference': circumference}
+    return render(request, 'calculate/circle.html', data)
 
 
 def triangle(request):

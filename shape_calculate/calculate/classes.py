@@ -3,6 +3,7 @@ import matplotlib
 import matplotlib.pyplot as plt
 from matplotlib import patches
 
+
 matplotlib.use('TkAgg')
 
 
@@ -85,21 +86,22 @@ class Circle(Figures):
     titele = "Circle"
 
     def get_area(self) -> float:
-        return (self.x ** 2) * m.pi
+        return round((self.x ** 2) * m.pi, 2)
 
     def get_circumference(self) -> float:
-        return self.x * 2 * m.pi
+        return round(self.x * 2 * m.pi, 2)
 
     def get_diametr(self) -> float:
-        return self.x * 2
+        return (self.x * 2)
 
     def draw(self):
         fig, ax = plt.subplots(figsize=(8, 8))
-        ax.add_patch(patches.Rectangle((0, 0), self.x, self.x, edgecolor='black', facecolor='black', fill=True))
-        plt.xlim([-(self.x * 0.3), self.x + self.x * 0.3])
-        plt.ylim([-(self.x * 0.3), self.x + self.x * 0.3])
+        ax.add_patch(patches.Circle((0, 0), self.x, color='black', fill=True))
+        plt.xlim([-self.x / 0.95, self.x / 0.95])
+        plt.ylim([-self.x / 0.95, self.x / 0.95])
         plt.grid(linestyle='--')
-        fig.savefig('static/calculate/img/square.png')
+        fig.savefig('static/calculate/img/circle.png')
+
 
 class Triangle(Figures):
     """
@@ -201,6 +203,19 @@ class Сube(Figures):
 
     def get_area(self):
         return self.x ** 2 * 6
+
+    def draw(self):
+        fig, ax = plt.subplots(figsize=(8, 8))
+        # ax.set_aspect('equal')
+        x = [0, self.x, self.x / 2, 0]
+        y = [0, 0, self.x * 0.866, 0]
+        z = [0, 0, 0, 0]
+        plt.plot(x, y, z)
+        plt.xlim([-(self.x * 0.3), self.x + self.x * 0.3])
+        plt.ylim([-(self.x * 0.3), self.x + self.x * 0.3])
+        plt.grid(linestyle='--')
+
+        fig.savefig('static/calculate/img/cube.png')
 
 
 class Parallelepiped(Figures):

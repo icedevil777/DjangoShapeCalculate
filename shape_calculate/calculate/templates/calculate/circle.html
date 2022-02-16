@@ -6,7 +6,7 @@
         <h2 id="titele"> Окружность </h2>
         <img id="calc_1" src="{% static 'calculate/img/calc2.png' %}" alt="Calc">
         <img id="mass" src="{% static 'calculate/img/masedge.png' %}" alt="Calc">
-        <img class="shape" src="{% static 'calculate/img/square.png' %}" alt="Окружность">
+        <img class="shape" src="{% static 'calculate/img/circle.png' %}" alt="Окружность">
 <!--        <p class="square1"> Вводите только положительные целые числа </p>-->
         <form id="form_1" method='post'>
             <button id="btn" class="btn btn-dark btn-lg" type="submit">Вычислить</button>
@@ -15,7 +15,8 @@
                 {{ fom.as_p }}
             </div>
         </form><br>
-        <p class="out_square"> Периметр равен {{perimetr}} </p>
+        <p class="out_square"> Длин. окр. равна {{circumference}} </p>
+        <p class="out_square"> Диаметр равен {{diametr}} </p>
         <p class="out_square"> Площадь равна {{area}} </p>
     </div>
 
