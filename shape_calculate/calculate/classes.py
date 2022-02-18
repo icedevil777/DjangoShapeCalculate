@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from matplotlib import patches
 
 
-matplotlib.use('TkAgg')
+# matplotlib.use('TkAgg')
 
 
 class Figures:

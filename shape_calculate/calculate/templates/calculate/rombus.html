@@ -7,12 +7,12 @@
         <img id="calc_2" src="{% static 'calculate/img/calc2.png' %}" alt="Calc">
         <img id="mass" src="{% static 'calculate/img/masedge.png' %}" alt="Calc">
         <img class="shape" src="{% static 'calculate/img/rombus.png' %}" alt="Ромб">
-        <form id="form_2" method='post'>
-            <button id="btn" class="btn btn-dark btn-lg" type="submit">Вычислить</button>
+        <form id="form_1" method='post'>
             <div id="field">
                 {% csrf_token %}
                 {{ fom.as_p }}
             </div>
+            <button id="btn" class="btn btn-dark btn-lg" type="submit">Вычислить</button>
         </form><br>
         <p class="out_square"> Периметр равен {{perimetr}} </p>
         <p class="out_square"> Площадь равна {{area}} </p>
